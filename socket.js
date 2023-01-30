@@ -1,5 +1,4 @@
 const {WebSocketServer} = require("ws");
-const fs = require("fs");
 
 let socket = new WebSocketServer({port:80});
 
