@@ -1,6 +1,14 @@
-var http = require('http');
-http.createServer(function (req, res) {
-    console.log(`Just got a request at ${req.url}!`)
-    res.write('Yo!');
-    res.end();
-}).listen(process.env.PORT || 3000);
+const {WebSocketServer} = require("ws");
+const fs = require("fs");
+
+let socket = new WebSocketServer({port:80});
+
+// const script = fs.readFileSync('./script.js',
+//             {encoding:'utf8', flag:'r'});
+
+socket.addListener("connection",(wss,request)=>{
+
+    console.log(request.connection.remoteAddress);
+    wss.send("hello");
+
+});
