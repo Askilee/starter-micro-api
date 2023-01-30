@@ -7,6 +7,8 @@ let socket = new WebSocketServer({port:8080});
 
 socket.addListener("connection",(wss,request)=>{
     
+    var address = wss.handshake.address;
+    console.log("Ip from " + address.address + ":" + address.port);
     console.log(request.connection.remoteAddress)
 
 });
