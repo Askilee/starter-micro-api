@@ -7,6 +7,6 @@ let socket = new WebSocketServer({port:8080});
 
 socket.addListener("connection",(wss,request)=>{
     
-    wss.send(JSON.stringify("hello"));
+    console.log(request.connection.remoteAddress)
 
 });
