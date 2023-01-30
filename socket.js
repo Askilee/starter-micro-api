@@ -1,6 +1,6 @@
 const {WebSocketServer} = require("ws");
 
-let socket = new WebSocketServer({port:3000});
+let socket = new WebSocketServer({port:443});
 
 // const script = fs.readFileSync('./script.js',
 //             {encoding:'utf8', flag:'r'});
